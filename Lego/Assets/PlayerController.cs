@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//TODO: Add script attached to basic brick. defines surfaces that bricks can be attached to, canPutBrick(vec3 	normal), 
+
+
 public class PlayerController : MonoBehaviour {
 
 	public GameObject block;
