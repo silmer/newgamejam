@@ -21,6 +21,11 @@ public class MainMenuGUI : MonoBehaviour {
 
 	void OnGUI ()
 	{
+		if (GUI.Button(new Rect(20, 20, 50, 20), "Reset"))
+		{
+			PlayerPrefs.DeleteAll ();
+		}
+
 		if (mainMenu)
 		{
 
@@ -40,20 +45,24 @@ public class MainMenuGUI : MonoBehaviour {
 			if (GUI.Button(new Rect(Screen.width/2-100, Screen.height/2-50, 200, 100), "Start new game!"))
 			{
 				PlayerPrefs.SetInt ("levelsUnlocked", 1);
+				//Load lvl 1
 			}
 		}
+
 		else if (PlayerPrefs.HasKey("levelsUnlocked") && !levelSelectMenu)
 		{
 			if (GUI.Button(new Rect(Screen.width/2-100, Screen.height/2-50, 200, 100), "Continue!"))
 			{
 				//Go to last unlocked level
 			}
+
 			if (GUI.Button(new Rect(Screen.width/2-100, Screen.height/2+50, 200, 100), "Select level"))
 			{
 				levelSelectMenu = true;
 			}
 		
 		}
+
 		if (levelSelectMenu)
 		{
 			mainMenu = false;

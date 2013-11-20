@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\MainMenuGUI.cs" />
      <Compile Include="Assets\PlayerController.cs" />
+     <Compile Include="Assets\PlayerGUI.cs" />
      <Compile Include="Assets\PolygonTool\Polygon.cs" />
      <Compile Include="Assets\PolygonTool\Triangulation.cs" />
      <Compile Include="Assets\ReadWriteXml.cs" />
