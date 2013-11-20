@@ -1,0 +1,26 @@
+<level>
+  <GameObject>
+    <type>Block2x2</type>
+    <position>
+      <x>-2.25</x>
+      <y>0.9</y>
+      <z>1.5</z>
+    </position>
+  </GameObject>
+  <GameObject>
+    <type>Block2x2</type>
+    <position>
+      <x>2.25</x>
+      <y>0.9</y>
+      <z>2.25</z>
+    </position>
+  </GameObject>
+  <GameObject>
+    <type>Block2x2</type>
+    <position>
+      <x>1.5</x>
+      <y>0.9</y>
+      <z>2.25</z>
+    </position>
+  </GameObject>
+</level>

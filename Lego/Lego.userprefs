@@ -1,10 +1,21 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerGUI.cs">
     <Files>
       <File FileName="Assets\PlayerGUI.cs" Line="64" Column="4" />
       <File FileName="Assets\MainMenuGUI.cs" Line="1" Column="1" />
       <File FileName="Assets\PlayerGUI.cs" Line="39" Column="14" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerController.cs">
+    <Files>
+      <File FileName="Assets\ReadWriteXml.cs" Line="137" Column="48" />
+      <File FileName="Assets\ReadWriteXml.cs" Line="147" Column="1" />
+      <File FileName="Assets\Block2x2Script.cs" Line="5" Column="2" />
+      <File FileName="Assets\BlockScript.cs" Line="31" Column="15" />
+      <File FileName="Assets\PlayerController.cs" Line="12" Column="2" />
+>>>>>>> save/load works
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

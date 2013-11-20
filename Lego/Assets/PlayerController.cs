@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 
 	public GameObject block;
 	RaycastHit hit;
-	
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -31,28 +31,44 @@ public class PlayerController : MonoBehaviour {
 			print ("mouseDown(0)");
 			RemoveBlock ();
 		}
+
 	}
 
 	void PlaceBlock() {
 		if (HitBlock()) {
-			float scale = (hit.normal.y == 1 || hit.normal.y == -1) ? (float)0.9 : (float)0.75;
+
+			//float scale = (hit.normal.y == 1 || hit.normal.y == -1) ? (float)0.9 : (float)0.75;
+			//Block b = Instantiate(block);
+			string bn = block.name;
+			GameObject b = (GameObject)Instantiate(block);
+			b.name = bn;
+			BlockScript script = (BlockScript) b.GetComponent("BlockScript");
+			script.CreateBlock(hit.transform.position,hit.normal,b);
+
+			/*
 			//                 position             + 0.9 in direction of hit      no rotation  
 			Instantiate(block, hit.transform.position + hit.normal  * scale, Quaternion.identity);
 			Instantiate(block, hit.transform.position + block.transform.lossyScale.z * new Vector3(0,0,1) + hit.normal * scale, Quaternion.identity);
 			Instantiate(block, hit.transform.position + block.transform.lossyScale.z * new Vector3(1,0,0) + hit.normal * scale, Quaternion.identity);
 			Instantiate(block, hit.transform.position + block.transform.lossyScale.z * new Vector3(1,0,1) + hit.normal * scale, Quaternion.identity);
+			*/
 		}
 	}
 
 	void RemoveBlock() {
 		if(HitBlock()) {
-			Destroy(hit.transform.gameObject);
+			if (hit.transform.parent != null) {
+				BlockScript script = (BlockScript) hit.transform.parent.GetComponent("BlockScript");
+				if (script.canDestroy())
+					Destroy(hit.transform.parent.gameObject);
+			}
 		}
 	}
 	
 	bool HitBlock() {
 		if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit,5,1)){
-			if (hit.transform.tag == "Lego") {
+			Debug.Log (hit.transform.name);
+			if (hit.transform.name.Equals("1x1block") && hit.transform != null) {
 				print (hit.normal);
 				//if (hit.normal == new Vector3(0,1,0) || hit.normal == new Vector3(0,-1,0)) {
 					return true;
